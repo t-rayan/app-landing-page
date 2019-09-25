@@ -1,0 +1,26 @@
+$screen-md-min: 650px;
+$screen-md2-min: 850px;
+$screen-lg-min: 1080px;
+$screen-xl-min: 1300px;
+
+@mixin md {
+    @media(min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+@mixin md2 {
+    @media(min-width: #{$screen-md2-min}) {
+        @content;
+    }
+}
+@mixin lg {
+    @media(min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media(min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
