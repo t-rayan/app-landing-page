@@ -3,8 +3,9 @@
 
 @import "./mixins";
 
+// default css
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   margin: 0;
 }
 p,
@@ -20,6 +21,14 @@ button {
   font-weight: 400;
   font-size: 0.9rem;
 }
+button:focus {
+  outline: none !important;
+}
+.active-link {
+  color: #27acb4 !important;
+}
+
+// custom css
 .container {
   text-align: center;
   padding: 0.8rem 1rem;
@@ -34,48 +43,35 @@ button {
   }
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.8rem;
-  .logo {
-    text-align: left;
-    h1 {
-      margin: 0;
-    }
-  }
-  .hide-mobile {
-    display: none;
-  }
-  .menu-icon {
-    margin-top: 95%;
+// header and nav
+.navbar {
+  position: fixed !important;
+  background-color: #fff !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 1.5rem !important;
 
-    @include lg {
-      display: none;
-    }
+  @include lg {
+    padding: 1rem 5rem !important;
   }
-  .nav-links {
-    @include lg {
-      list-style-type: none;
-      display: flex;
-      align-items: center;
-    }
-    .nav-link {
-      @include lg {
-        text-decoration: none;
-        padding-right: 4rem;
-        color: #272727;
-        font-size: 0.9rem;
-        font-weight: 400;
-      }
-    }
-    .nav-link:hover{
-      @include lg {
-        color: #27acb4 !important;
-      }
-    }
+  @include xl {
+    padding: 1rem 10rem !important;
   }
 }
+.navbar-brand {
+  margin-right: 0 !important;
+}
+.navbar-toggler {
+  border: none !important;
+}
+.nav-item a {
+  font-size: 0.9rem;
+}
+.nav-item a:hover {
+  color: #27acb4 !important;
+}
+// presentation section
 
 .presentation {
   display: flex;
@@ -253,7 +249,7 @@ header {
     font-weight: bold;
     display: inline-block;
     width: 1.5rem;
-    margin-left: -.5rem;
+    margin-left: -0.5rem;
   }
   li {
     text-align: left;
@@ -308,10 +304,9 @@ header {
     ::placeholder {
       color: #a9a6a6;
       @include lg {
-        font-size: .9rem;
+        font-size: 0.9rem;
         font-weight: 300;
       }
-      
     }
     .subscribe-btn {
       margin: 1.2rem auto;
